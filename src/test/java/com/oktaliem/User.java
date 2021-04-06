@@ -1,6 +1,7 @@
 package com.oktaliem;
 
 import com.oktaliem.page.*;
+import com.oktaliem.page.webactions.SeleniumPage;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -17,4 +18,5 @@ public class User {
     public LoginPage loginPage() {return new LoginPage(driver);}
     public BlibliPage blibliPage(){return new BlibliPage((driver));}
     public BukalapakPage bukalapakPage(){return new BukalapakPage(driver);}
+    public SeleniumPage seleniumPage(){return new SeleniumPage(driver);}
 }

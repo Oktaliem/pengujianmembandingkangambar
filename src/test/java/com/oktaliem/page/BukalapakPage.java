@@ -44,7 +44,7 @@ public class BukalapakPage extends BasePage {
 
         // get entire page screenshot with Shutterbug and run visual regression testing
         eye.track("Bukalapak Home Page - Shutterbug Test",
-                fullScreenShootShutterbug("Bukalapak Home Page - Shutterbug"));
+                fullScreenShootShutterbug("Bukalapak Home Page - Shutterbug Test"));
 
         // get entire page screenshot with Ashot and run visual regression testing
         eye.track("Bukalapak Home Page - Ashot Test",
