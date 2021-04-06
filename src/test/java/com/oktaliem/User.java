@@ -1,7 +1,7 @@
 package com.oktaliem;
 
 import com.oktaliem.page.*;
-import com.oktaliem.page.webactions.SeleniumPage;
+import com.oktaliem.page.SeleniumPage;
 import org.openqa.selenium.WebDriver;
 
 /**

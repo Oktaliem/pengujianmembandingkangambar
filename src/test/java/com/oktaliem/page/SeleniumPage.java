@@ -1,4 +1,4 @@
-package com.oktaliem.page.webactions;
+package com.oktaliem.page;
 
 import com.oktaliem.page.BasePage;
 import io.qameta.allure.Step;
