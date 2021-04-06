@@ -33,6 +33,7 @@ public class SeleniumPage extends BasePage {
                 getSeleniumElementScreenShot(seleniumWebDriver, chartName);
                 break;
             case SELENIUM_IDE:
+            case SELENIUM:
                 waitUntilLocatorIsVisible(seleniumIde, 30);
                 getShutterbugElementScreenshot(seleniumIde, chartName);
                 break;
@@ -43,8 +44,14 @@ public class SeleniumPage extends BasePage {
             default:
                 throw new IllegalStateException("Unexpected value: " + chartName);
         }
-        String expected_image = chartName + EXPECTED;
-        String diff_image = chartName + DIFF;
-        performVisualTest(chartName, expected_image, diff_image);
+
+        if (chartName.equals(SELENIUM)) {
+            performVisualTestNotIdentical(SELENIUM_IDE, SELENIUM_GRID + EXPECTED, SELENIUM + DIFF);
+        } else {
+            String expected_image = chartName + EXPECTED;
+            String diff_image = chartName + DIFF;
+            performVisualTest(chartName, expected_image, diff_image);
+        }
     }
+
 }

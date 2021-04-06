@@ -165,14 +165,21 @@ public class BasePage extends BaseActions {
     }
 
     @Step
+    public void performVisualTestNotIdentical(String actual_image, String expected_image, String diff_image) throws IOException {
+        assertImagesShouldNotIdentical(expected_image, actual_image, diff_image);
+        getBaseLineImage(expected_image);
+        getScreenshotDiffer(diff_image);
+    }
+
+    @Step
     protected void assertImagesShouldNotIdentical(String base, String actual, String result) throws IOException {
-        expImage = ImageIO.read(new File(System.getProperty("user.dir") + base));
-        actImage = ImageIO.read(new File(System.getProperty("user.dir") + actual));
+        expImage = ImageIO.read(new File(BASE_IMAGE_PATH + base + ".png"));
+        actImage = ImageIO.read(new File(SCREENSHOT_PATH + actual + ".png"));
         imgDiff = new ImageDiffer();
         diff = imgDiff.makeDiff(actImage, expImage);
-        if (!diff.hasDiff()) {
+        if (diff.hasDiff()) {
             markedImage = diff.getMarkedImage();
-            ImageIO.write(markedImage, "PNG", new File(System.getProperty("user.dir") + result));
+            ImageIO.write(markedImage, "PNG", new File(SCREENSHOT_PATH + result + ".png"));
         }
         Assert.assertTrue(diff.hasDiff(), "Checking that images are not identical,");
         Log.info("Checking Images should not identical");
