@@ -20,6 +20,7 @@ public class BukalapakPage extends BasePage {
 
     @Step
     public void performBukalapakVisualTrackerTest() throws IOException {
+        // get visible part screenshot and run visual regression testing
         eye.track("Bukalapak Home page",
                 ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64),
                 TestRunOptions.builder()
@@ -36,7 +37,18 @@ public class BukalapakPage extends BasePage {
                                         .height(200L)
                                         .build()
                         )).build());
+
+
+        // get screenshot and set as allure report attachment
         saveScreenshotPNG(driver);
+
+        // get entire page screenshot with Shutterbug and run visual regression testing
+        eye.track("Bukalapak Home Page - Shutterbug Test",
+                fullScreenShootShutterbug("Bukalapak Home Page - Shutterbug"));
+
+        // get entire page screenshot with Ashot and run visual regression testing
+        eye.track("Bukalapak Home Page - Ashot Test",
+                fullScreenShotAshot("Bukalapak Home Page - Ashot Test"));
     }
 
 }
