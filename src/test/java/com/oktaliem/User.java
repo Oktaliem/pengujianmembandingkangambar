@@ -16,4 +16,5 @@ public class User {
 
     public LoginPage loginPage() {return new LoginPage(driver);}
     public BlibliPage blibliPage(){return new BlibliPage((driver));}
+    public BukalapakPage bukalapakPage(){return new BukalapakPage(driver);}
 }

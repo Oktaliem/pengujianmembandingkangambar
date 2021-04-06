@@ -16,8 +16,9 @@ public class BlibliPage extends BasePage {
     }
 
     @Step
-    public void performVisualTest() throws IOException {
+    public void performBlibliVisualTrackerTest() throws IOException {
         eye.track("Blibli Home page", ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64));
+        saveScreenshotPNG(driver);
     }
 
 }

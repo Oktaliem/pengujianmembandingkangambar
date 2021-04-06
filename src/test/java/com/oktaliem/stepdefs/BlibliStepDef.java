@@ -10,6 +10,6 @@ public class BlibliStepDef extends AbstractStepDef {
     @Then("^I am landing to Blibli Home Page$")
     public void iAmLandingToBlibliHomePage() throws IOException {
         user = new User(driver);
-        user.blibliPage().performVisualTest();
+        user.blibliPage().performBlibliVisualTrackerTest();
     }
 }

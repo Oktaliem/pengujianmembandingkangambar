@@ -24,7 +24,7 @@ public class CucumberJvmTest extends AbstractTestNGCucumberTests {
             .project("Default project")
             .branchName("master")
             .enableSoftAssert(true)
-            .ciBuildId("Blibli Test")
+            .ciBuildId("Random Test")
             .build();
 
     @Before
