@@ -1,6 +1,5 @@
 package com.oktaliem.page;
 
-import com.oktaliem.page.BasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

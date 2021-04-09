@@ -19,4 +19,5 @@ public class User {
     public BlibliPage blibliPage(){return new BlibliPage((driver));}
     public BukalapakPage bukalapakPage(){return new BukalapakPage(driver);}
     public SeleniumPage seleniumPage(){return new SeleniumPage(driver);}
+    public YahooPage yahooPage(){return new YahooPage(driver);}
 }

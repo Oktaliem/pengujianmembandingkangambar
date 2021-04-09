@@ -8,8 +8,13 @@ import cucumber.api.java.Before;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import io.visual_regression_tracker.sdk_java.VisualRegressionTracker;
 import io.visual_regression_tracker.sdk_java.VisualRegressionTrackerConfig;
+import micooc.Micooc;
+import micooc.model.InitializedBuild;
+import org.testng.annotations.AfterClass;
 
 import java.io.IOException;
+
+import static com.oktaliem.utils.path.MICOO_PATH;
 
 /**
  * Created by oktaliem
@@ -17,6 +22,7 @@ import java.io.IOException;
 @CucumberOptions(features = {"src/test/java/com/oktaliem/features"})
 public class CucumberJvmTest extends AbstractTestNGCucumberTests {
 
+    //Visual Regression Tracker set up
     public static VisualRegressionTracker eye;
     private static final VisualRegressionTrackerConfig config = VisualRegressionTrackerConfig.builder()
             .apiUrl("http://localhost:4200")
@@ -26,6 +32,16 @@ public class CucumberJvmTest extends AbstractTestNGCucumberTests {
             .enableSoftAssert(true)
             .ciBuildId("Random Test")
             .build();
+
+    //Micoo Visual Regression Test set up
+    String serviceHost = "http://localhost:8123";
+    String apiKey = "AK6ffc25ffa1db3dab7a";
+    String pid = "PID0bd1a233f298411ebe1df872305ab983";
+    String buildVersion = "1";
+    String screenshotDirectory = MICOO_PATH;
+    String serviceEngineUrl = serviceHost + "/engine";
+    InitializedBuild initializedBuild;
+
 
     @Before
     public void before(Scenario scenario) throws IOException {
@@ -46,6 +62,11 @@ public class CucumberJvmTest extends AbstractTestNGCucumberTests {
     public void after(Scenario scenario) throws IOException {
         Log.info("Test Status " + scenario.getStatus());
         eye.stop();
+    }
+
+    @AfterClass
+    public void afterClass() {
+        initializedBuild = Micooc.newBuild(serviceEngineUrl, apiKey, pid, buildVersion, screenshotDirectory);
     }
 
 }

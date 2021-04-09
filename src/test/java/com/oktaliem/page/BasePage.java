@@ -30,8 +30,7 @@ import java.util.Base64;
 import java.util.concurrent.TimeUnit;
 
 import static com.google.common.io.Files.toByteArray;
-import static com.oktaliem.utils.path.BASE_IMAGE_PATH;
-import static com.oktaliem.utils.path.SCREENSHOT_PATH;
+import static com.oktaliem.utils.path.*;
 
 /**
  * Created by oktaliem
@@ -88,6 +87,17 @@ public class BasePage extends BaseActions {
         File f = el.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(f, new File(SCREENSHOT_PATH + image + ".png"));
         BufferedImage getImage = ImageIO.read(new File(SCREENSHOT_PATH + image + ".png"));
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        ImageIO.write(getImage, "png", output);
+        return output.toByteArray();
+    }
+
+    @Attachment(value = "Actual image", type = "image/png")
+    protected static byte[] getMicooSeleniumElementScreenShot(WebElement el, String image) throws IOException, InterruptedException {
+        TimeUnit.MILLISECONDS.sleep(2000);
+        File f = el.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(f, new File(MICOO_PATH + image + ".png"));
+        BufferedImage getImage = ImageIO.read(new File(MICOO_PATH + image + ".png"));
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         ImageIO.write(getImage, "png", output);
         return output.toByteArray();
