@@ -42,6 +42,7 @@ public class CucumberJvmTest extends AbstractTestNGCucumberTests {
     String serviceEngineUrl = serviceHost + "/engine";
     InitializedBuild initializedBuild;
 
+    public static String testCase;
 
     @Before
     public void before(Scenario scenario) throws IOException {
@@ -54,6 +55,7 @@ public class CucumberJvmTest extends AbstractTestNGCucumberTests {
         System.out.println("-------------------------------------------------------------------------------------");
         Log.info("I am on Scenario: " + scenario.getName());
         Log.info("With Tag: " + scenario.getSourceTagNames());
+        testCase = scenario.getName();
         eye = new VisualRegressionTracker(config);
         eye.start();
     }

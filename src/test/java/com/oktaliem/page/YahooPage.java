@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
+import static com.oktaliem.CucumberJvmTest.testCase;
+
 public class YahooPage extends BasePage{
     public YahooPage(WebDriver driver) {
         super(driver);
@@ -19,5 +21,6 @@ public class YahooPage extends BasePage{
     public void performYahooVisualTest(String bankName) throws IOException, InterruptedException {
         getMicooSeleniumElementScreenShot(quoteHeader,bankName);
         saveScreenshotPNG(driver);
+        getMicooSeleniumElementScreenShot(quoteHeader,testCase.replaceAll("\\s", ""));
     }
 }

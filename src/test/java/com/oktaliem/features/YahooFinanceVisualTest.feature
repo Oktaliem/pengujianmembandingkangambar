@@ -1,5 +1,5 @@
 # Created by oktaliem
-@Yahoo
+@yahoo
 Feature: Sample visual test for Yahoo Finance
 
   Scenario: Bank BCA Stock Page
