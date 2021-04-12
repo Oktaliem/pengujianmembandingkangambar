@@ -4,7 +4,7 @@ Latar Belakang:
 
 Ketika melakukan End to End testing biasanya Tester melakukan functional test and visual test secara bersamaan baik manual ataupun otomasi. Dari sisi otomasi, Selenium/Appium dapat melakukan funtional test dengan baik namun cukup terbatas untuk melakukan visual test dengan pustaka-pustaka yang tersedia. Framework ini dibuat untuk membantu proses testing secara fungsional dan sekaligus bersamaan pengecekan secara visual yang terotomasi dengan bantuan Selenium/Appium dan Framework pendukung lainnya.
 
-Sambil menyelam minum air, sambil menjalankan visual testing tanpa menggangu proses functional regression test dengan Selenium/Appium.
+Sambil menyelam minum air, sambil menjalankan functional regression test dengan Selenium/Appium sambil menjalankan visual test juga.
 
 
 ### Run the Test
