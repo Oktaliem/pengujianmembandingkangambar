@@ -28,7 +28,4 @@ $ mvn clean test -Dbrowser=zalenium -Dgrid_url=http://localhost:4444/wd/hub
 #### Micoo
 - YahooFinanceVisualTest.feature
 
-#### Gazo-san (Docker) + Allure
-- To do
-
 
