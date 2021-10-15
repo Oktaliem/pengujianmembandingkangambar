@@ -26,17 +26,17 @@ public class CucumberJvmTest extends AbstractTestNGCucumberTests {
     public static VisualRegressionTracker eye;
     private static final VisualRegressionTrackerConfig config = VisualRegressionTrackerConfig.builder()
             .apiUrl("http://localhost:4200")
-            .apiKey("D3GA73G7F4M7DAGK0HJVRVV0P418")
-            .project("Default project")
+            .apiKey("HQKMJVGVP84Z4BMBR2ZCB468N3DX")
+            .project("ISQA")
             .branchName("master")
             .enableSoftAssert(true)
-            .ciBuildId("Random Test")
+            .ciBuildId("Demo Test")
             .build();
 
     //Micoo Visual Regression Test set up
     String serviceHost = "http://localhost:8123";
-    String apiKey = "AK6ffc25ffa1db3dab7a";
-    String pid = "PID0bd1a233f298411ebe1df872305ab983";
+    String apiKey = "AK9650d2de834735bb81";
+    String pid = "PID388744cac445436a8de74ee4fd24f626";
     String buildVersion = "1";
     String screenshotDirectory = MICOO_PATH;
     String serviceEngineUrl = serviceHost + "/engine";

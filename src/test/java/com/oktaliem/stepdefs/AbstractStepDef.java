@@ -18,7 +18,7 @@ public class AbstractStepDef {
 
     public WebDriver getDriver() {
         try {
-            if (System.getProperty("browser").equals("zalenium")) {
+            if (System.getProperty("browser").equals("grid")) {
                 DesiredCapabilities capability = DesiredCapabilities.chrome();
                 capability.setBrowserName("chrome");
                 capability.setCapability("name", testCase);
@@ -29,7 +29,6 @@ public class AbstractStepDef {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         }

@@ -15,13 +15,13 @@ public class SeleniumPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(xpath = "//body/section[2]/div[1]/div[1]")
+    @FindBy(css = ".col > .row > div:nth-of-type(1) .card-body")
     protected WebElement seleniumWebDriver;
 
-    @FindBy(xpath = "//body/section[2]/div[1]/div[2]")
+    @FindBy(css = ".col div:nth-of-type(2) .card-body")
     protected WebElement seleniumIde;
 
-    @FindBy(xpath = "//body/section[2]/div[1]/div[3]")
+    @FindBy(css = ".col div:nth-of-type(3) .card-body")
     protected WebElement seleniumGrid;
 
     @Step
