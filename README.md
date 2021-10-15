@@ -10,8 +10,8 @@ Sambil menyelam minum air, sambil menjalankan functional regression test dengan 
 ### Run the Test
 ```
 $ mvn clean test
-$ mvn clean test -Dcucumber.options="src/test/java/com/oktaliem/features --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm --tags @${tag_name}"
-$ mvn clean test -Dbrowser=zalenium -Dgrid_url=http://localhost:4444/wd/hub
+$ mvn clean test -Dcucumber.options="src/test/java/com/oktaliem/features --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm --tags @selenium"
+$ mvn clean test -Dbrowser=grid -Dgrid_url=http://localhost:4444/wd/hub
 
 ```
 
