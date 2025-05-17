@@ -6,6 +6,8 @@ Ketika melakukan End to End testing biasanya Tester melakukan functional test an
 
 Sambil menyelam minum air, sambil menjalankan functional regression test dengan Selenium/Appium sambil menjalankan visual testing juga.
 
+### Architecture Diagram
+![Image](https://github.com/user-attachments/assets/db341c87-3267-4dc9-8994-211b237594b8)
 
 ### Installation
 - [Visual Regression Tracker](https://github.com/Visual-Regression-Tracker/Visual-Regression-Tracker)
